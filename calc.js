@@ -218,7 +218,6 @@ function toSpecialOperator(charSign) {
 }
 
 function clearField() {
-	dot.disabled = false;
 	str = "0";
 	inputFeild.val(str);
 	res = 0;
@@ -233,7 +232,6 @@ function toDot() {
 }
 
 function toResult() {
-	dot.disabled = false;
 	arg2 = parseFloat(str);
 	
 	switch (sign) {
