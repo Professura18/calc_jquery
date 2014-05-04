@@ -235,23 +235,23 @@ function toResult() {
 	
 	switch (sign) {
 	  case "/":
-		res = arg1/arg2;
+		res = arg1 / arg2;
 		break;
 		
 	  case "*":
-		res = arg1*arg2;
+		res = arg1 * arg2;
 		break;
 		
 	  case "+":
-		res = arg1+arg2;
+		res = arg1 + arg2;
 		break;
 		
 	  case "-":	  
-		res = arg1-arg2;
+		res = arg1 - arg2;
 		break;
 	
 	  case "1/x":	  
-		res = 1.0/arg1;
+		res = 1.0 / arg1;
 		break;
 
 	  case "√x":	  
