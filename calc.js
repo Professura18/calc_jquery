@@ -1,3 +1,5 @@
+var countOperation = 0;				// Подсчитывает кол-во операций
+var flagResult = false;				// отслеживает нажатие "равно"
 var re = /.*\.0*.*/; 				// регулярное выражение
 var str = ""; 						// для временного хранения введеных данных в строке
 var arg1 = 0; 						// перове введеное число
@@ -14,7 +16,7 @@ $(".calcNum").on("click", clickNumPad);
 
 //запретить фокус на поле ввода
 $("#inpCalc").focus(function() {
-  $(this).blur();
+    $(this).blur();
 });
 
 
@@ -82,6 +84,7 @@ function pressKeyNumPad(event) {
 		
 	  case 13: //Enter
 	    toResult();
+		flagResult = true;
 		break;								
 	}	
 }
@@ -150,6 +153,7 @@ function clickNumPad(event) {
 
 	  case "=":
 	    toResult();
+		flagResult = true;		
 		break;	
 		
 	  case "C":
@@ -200,14 +204,27 @@ function addNumer(charNum) {
 function toBackSpace() {
 	if (str.length > 1) {
 		str = str.slice(0, str.length - 1);
-		parseInput();		
+		parseInput();
 	}
 }
 
 function toOperator(charSign) {
-	arg1 = parseFloat(str);
-	sign = charSign;
-	clearField();
+	if (countOperation != 0) {
+		
+		if (flagResult == true) {
+			sign = charSign;								
+		} else {
+			toResult();
+			sign = charSign;
+		}
+		
+	} else {
+		arg1 = parseFloat(str);
+		sign = charSign;
+		clearField();
+	}
+	
+	countOperation++;
 }
 
 function toSpecialOperator(charSign) {
@@ -221,6 +238,8 @@ function clearField() {
 	inputFeild.val(str);
 	res = 0;
 	arg2 = 0;
+	countOperation = 0;
+	flagResult = false;
 }
 
 function toDot() {
@@ -260,8 +279,7 @@ function toResult() {
 	}
 	
 	inputFeild.val(res);
-	res = 0;
-	arg1 = 0;
+	arg1 = res;
 	arg2 = 0;
 	sing = "";
 	str = "";
