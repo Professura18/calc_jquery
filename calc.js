@@ -186,9 +186,9 @@ function parseInput() {
 	if (str.search(re) != -1) {
 		inputFeild.val(str);
 	} else {
-		num=parseFloat(str);
+		num = parseFloat(str);
 		inputFeild.val(num);				
-		str=""+num;
+		str = "" + num;
 	}
 }
 
@@ -199,7 +199,7 @@ function addNumer(charNum) {
 
 function toBackSpace() {
 	if (str.length>1) {
-		str=str.slice(0,str.length-1);
+		str = str.slice(0,str.length-1);
 		parseInput();		
 	}
 }
@@ -251,18 +251,18 @@ function toResult() {
 		break;
 	
 	  case "1/x":	  
-		res=1.0/arg1;
+		res = 1.0/arg1;
 		break;
 
 	  case "√x":	  
-		res=Math.sqrt(arg1);
+		res = Math.sqrt(arg1);
 		break;						
 	}
 	
 	inputFeild.val(res);
-	res=0;
-	arg1=0;
-	arg2=0;
-	sing="";
-	str="";
+	res = 0;
+	arg1 = 0;
+	arg2 = 0;
+	sing = "";
+	str = "";
 }
