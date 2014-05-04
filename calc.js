@@ -200,8 +200,7 @@ function addNumer(charNum) {
 function toBackSpace() {
 	if (str.length>1) {
 		str=str.slice(0,str.length-1);
-		num=parseFloat(str);
-		inputFeild.val(num);		
+		parseInput();		
 	}
 }
 
