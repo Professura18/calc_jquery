@@ -10,10 +10,10 @@ var dot = $("#dot");				//кнопка с точкой (нужна чтобы н
 
 $(window).on("keypress", pressKeyNumPad);
 $(window).on("keydown", keyDownBsEsc);
-$(".calcNum").on("click",clickNumPad);
+$(".calcNum").on("click", clickNumPad);
 
 //запретить фокус на поле ввода
-$("#inpCalc").focus(function(){
+$("#inpCalc").focus(function() {
   $(this).blur();
 });
 
