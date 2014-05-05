@@ -52,8 +52,8 @@ function pressKeyNumPad(event) {
 		break;
 	}
 	
-	if (event.which>=49 && event.which<=57) {
-		addNumer(event.which-48);
+	if (event.which >= 49 && event.which <= 57) {
+		addNumer(event.which - 48);
 	}
 }
 
