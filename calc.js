@@ -102,47 +102,7 @@ function keyDownBsEsc(event) {
 }
 
 function clickNumPad(event) {
-	switch (event.target.value) {
-	  case "1":
-	    addNumer("1");
-		break;
-		
-	  case "2":
-	    addNumer("2");
-		break;
-		
-	  case "3":
-	    addNumer("3");
-		break;
-		
-	  case "4":	  
-	    addNumer("4");
-		break;
-		
-	  case "5":	 
-	    addNumer("5");
-		break;
-		
-	  case "6":
-	    addNumer("6");
-		break;
-			
-	  case "7":
-	    addNumer("7");
-		break;
-		
-	  case "8":
-	    addNumer("8");
-		break;
-		
-	  case "9":
-	    addNumer("9");
-		break;	
-		
-	  case "0":
-	    addNumer("0");
-		break;
-		
+	switch (event.target.value) {		
 	  case ".":
 	    toDot();
 		break;
@@ -182,7 +142,10 @@ function clickNumPad(event) {
 
 	  case "√x":	  
 		toSpecialOperator("√x");
-		break;																		  									
+		break;
+		
+	  default:
+	    addNumer(event.target.value);
 	}
 }
 
