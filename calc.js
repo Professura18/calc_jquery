@@ -21,45 +21,9 @@ $("#inpCalc").focus(function() {
 
 
 function pressKeyNumPad(event) {	
-	switch (event.which) {
-	  case 49:
-	    addNumer("1");
-		break;
-		
-	  case 50:
-	    addNumer("2");
-		break;
-		
-	  case 51:
-	    addNumer("3");
-		break;
-		
-	  case 52:	  
-	    addNumer("4");
-		break;
-		
-	  case 53:	 
-	    addNumer("5");
-		break;
-		
-	  case 54:
-	    addNumer("6");
-		break;
-			
-	  case 55:
-	    addNumer("7");
-		break;
-		
-	  case 56:
-	    addNumer("8");
-		break;
-		
-	  case 57:
-	    addNumer("9");
-		break;	
-		
+	switch (event.which) {	
 	  case 48:
-	    addNumer("0");
+		addNumer("0");	    	
 		break;
 		
 	  case 47:
@@ -85,8 +49,12 @@ function pressKeyNumPad(event) {
 	  case 13: //Enter
 	    toResult();
 		flagResult = true;
-		break;								
-	}	
+		break;
+	}
+	
+	if (event.which>=49 && event.which<=57) {
+		addNumer(event.which-48);
+	}
 }
 
 function keyDownBsEsc(event) {
@@ -97,7 +65,7 @@ function keyDownBsEsc(event) {
 		
 	  case 8: //BackSpace
 	    toBackSpace();
-		break;				
+		break;
 	}
 }
 
